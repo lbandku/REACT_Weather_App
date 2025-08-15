@@ -23,3 +23,12 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+
+
+
+# Add .env.local so Git ignores it, to keep API keys local & force clones to use/make own API keys
+.env.local
+
+
+
