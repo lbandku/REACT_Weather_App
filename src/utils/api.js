@@ -6,7 +6,8 @@ export async function fetchCoordinates(location){
         params:{
             access_key: import.meta.env.VITE_GEOCODE_API_KEY,
             query: location,
-            limit: 1
+            limit: 1,
+            country: 'US', // gets PositionStack to render US zip codes as US cities
         }
 });
 
@@ -27,4 +28,6 @@ export async function fetchWeather(lat,lon){
     });
     return response.data;
 }
+
+
 
