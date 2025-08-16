@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import{fetchCoordinates,fetchWeather} from './utils/api';
 import SearchBar from './components/SearchBar';
 import WeatherCard from './components/WeatherCard';
-// import './App.css';
+import './App.css';
 
 
 // Call API using useEffect
@@ -43,8 +43,6 @@ useEffect(()=>{
       alert('Weather not found for that location.');
     }
   };
-
-
 
 
   return(
