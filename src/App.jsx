@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 import{fetchCoordinates,fetchWeather} from './utils/api';
+import SearchBar from './components/SearchBar';
+import WeatherCard from './components/WeatherCard';
 // import './App.css';
 
 
@@ -45,41 +47,19 @@ useEffect(()=>{
 
 
 
+  return(
+    <div>
+      <h1>SkyScout Weather App</h1>
 
-
-
-
-return(
-  <div>
-    <h1>Weather App</h1>
-
-
-    {/*Search Form*/}
-    <form onSubmit={handleSearch}>
-      <input
-        type="text"
-        placeholder="Enter city, zip code, address, landmark..."
-        value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
+      <SearchBar
+        searchTerm={searchTerm}
+        setSearchTerm={setSearchTerm}
+        onSearch={handleSearch}
       />
-      <button type="submit">Search</button>  
-    </form>
 
-
-
-    {/*Weather Display*/}
-    {weather ?(
-      <div>
-        <h2>{weather.name}</h2>
-        <p>{weather.main.temp}°F</p>
-        <p>{weather.weather[0].description}</p>
-      </div>
-    ):(
-      <p>Loading weather...</p>
-
-    )}
-  </div>
-);
+      <WeatherCard weather={weather} />
+    </div>
+  );
 }
 
 export default App;
