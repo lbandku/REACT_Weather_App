@@ -46,16 +46,20 @@ useEffect(()=>{
 
 
   return(
-    <div>
-      <h1>SkyScout Weather App</h1>
+    <div className="app-container">   {/* full page wrapper */}
+      <div className="scale-wrapper">   {/* only scales the card/dashboard content */}
+        <div className='="app-content'>   {/* white card with shadow, etc */}
+          <h1>Weather App</h1>
+      
+          <SearchBar
+           searchTerm={searchTerm}
+           setSearchTerm={setSearchTerm}
+           onSearch={handleSearch}
+          />
 
-      <SearchBar
-        searchTerm={searchTerm}
-        setSearchTerm={setSearchTerm}
-        onSearch={handleSearch}
-      />
-
-      <WeatherCard weather={weather} />
+          <WeatherCard weather={weather} />
+        </div>
+      </div>
     </div>
   );
 }
