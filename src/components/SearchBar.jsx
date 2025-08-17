@@ -3,7 +3,8 @@ function SearchBar({ searchTerm, setSearchTerm, onSearch }) {
     <form onSubmit={onSearch}>
       <input
         type="text"
-        placeholder="Enter city, zip code, address, or landmark"
+        aria-label="Location search"
+        placeholder="Enter city/state, zip code, address, or landmark"
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
       />

@@ -2,7 +2,7 @@
 /* Body Styling */
 body {
   font-family: Arial, sans-serif;
-  margin: 5rem;
+  margin: 2rem auto;
   padding: 0;
   background: #f0f4f8;
   color: #333;
@@ -219,3 +219,42 @@ button:hover {
     grid-template-columns: repeat(3, 1fr); /* Three columns for desktops */
   }
 }
+
+
+/* Make entire dashboard load on screen while maintaining formatting */
+/* Outer full-page container */
+.app-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  background: #f0f4f8;
+  overflow: hidden;
+  padding-top: 2rem;
+}
+
+/* Scaling wrapper */
+.scale-wrapper {
+  transform-origin: top center;
+  transition: transform 0.3s ease;
+  width: auto;
+  height: auto;
+  
+}
+
+/* Scale down on large screens */
+@media (min-width: 1024px) {
+  .scale-wrapper {
+    transform: scale(0.5); /* Loads wrapper and container at 50% to fit entire dashboard on screen */
+  }
+}
+
+/* Load slightly smaller on ultra-wide displays */
+@media (min-width: 1600px) {
+  .scale-wrapper {
+    transform: scale(0.4);
+  }
+}
+
+
