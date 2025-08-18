@@ -1,3 +1,6 @@
+// SearchBar
+// Allows users to enter a location to trigger a weather search
+
 function SearchBar({ searchTerm, setSearchTerm, onSearch }) {
   return (
     <form onSubmit={onSearch}>

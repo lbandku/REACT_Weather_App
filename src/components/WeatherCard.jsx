@@ -1,5 +1,6 @@
 // src/components/WeatherCard.jsx
 function WeatherCard({ weather }) {
+  // Show fallback message while data is loading
   if (!weather) return <p>Loading weather...</p>;
 
   const { main, weather: weatherConditions, wind, sys } = weather;
@@ -7,8 +8,12 @@ function WeatherCard({ weather }) {
   const humidity = main.humidity;
   const windSpeed = wind.speed;
   const pressure = main.pressure;
+
+  // Get weather description & icon code from API
   const sunrise = new Date(sys.sunrise * 1000).toLocaleTimeString();
   const sunset = new Date(sys.sunset * 1000).toLocaleTimeString();
+
+  // Construct URL to weather icon from OpenWeather API
   const description = weatherConditions[0].description;
   const iconCode = weatherConditions[0].icon; // Use the weather icon code
   
@@ -22,6 +27,7 @@ function WeatherCard({ weather }) {
         <p className="temp">
             <i className="fas fa-temperature-high"></i> {temp}°F 
         </p>
+        <p className="feels-like">Feels like {Math.round(weather.main.feels_like)}°</p>
         <p className="description">{description}</p>
         <img src={iconUrl} alt={description} />
       </div>
@@ -53,6 +59,12 @@ function WeatherCard({ weather }) {
             <p>Pressure:</p>
             <p>{pressure} hPa</p>
           </div>
+          <div className="detail">
+            <i className="fa-solid fa-eye"></i>
+            <p>Visibility</p>
+            <p>{weather?.visibility ? (weather.visibility / 1000).toFixed(1) + ' km' : 'N/A'}</p>
+          </div>
+
         </div>
       </div>
     </div>
