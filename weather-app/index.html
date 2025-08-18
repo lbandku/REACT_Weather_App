@@ -4,9 +4,11 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React</title>
 
-    <!--Link to FontAwesome Icons-->
+    <!-- Page Title shown in browswer tab -->
+    <title>WeatherSearch</title>
+
+    <!--Link to FontAwesome Icons - for Weather Display on dashboard-->
     <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
@@ -15,9 +17,24 @@
     referrerpolicy="no-referrer"
     />
 
+    <!--Link to Boxicons Icons - for dark/light toggle -->
+    <link
+    rel="stylesheet"
+    href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+    />
+
   </head>
   <body>
+    <!-- REACT mounts the app into this div -->
     <div id="root"></div>
+
+    <!-- Footer with Copyright -->
+    <footer style="text-align: center; padding: 1rem; font-size: 0.85rem; color: #888;">
+      Handcrafted by Jax © twentytwentyfive. All rights reserved.
+    </footer>
+
+    <!-- Load main JavaScript module for REACT + Vite-->
     <script type="module" src="/src/main.jsx"></script>
+
   </body>
 </html>
